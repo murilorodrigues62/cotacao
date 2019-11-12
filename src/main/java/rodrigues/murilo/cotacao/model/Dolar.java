@@ -1,20 +1,27 @@
 package rodrigues.murilo.cotacao.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Dolar {
 
-    @JsonProperty("value")
-    private List<Value> value;
+    private BigDecimal cotacaoVenda;
 
-    public List<Value> getValue() {
-        return value;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime dataHoraCotacao;
+
+    public LocalDateTime getDataHoraCotacao() { return dataHoraCotacao;  }
+    public void setDataHoraCotacao(LocalDateTime dataHoraCotacao) {
+        this.dataHoraCotacao = dataHoraCotacao;
     }
-    public void setValue(List<Value> value) {
-        this.value = value;
+    public BigDecimal getCotacaoVenda() {
+        return cotacaoVenda;
+    }
+    public void setCotacaoVenda(BigDecimal cotacaoVenda) {
+        this.cotacaoVenda = cotacaoVenda;
     }
 
 }
