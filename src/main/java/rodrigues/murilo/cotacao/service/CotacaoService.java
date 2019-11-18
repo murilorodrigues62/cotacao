@@ -15,7 +15,6 @@ public class CotacaoService {
         String url = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='%s'&@dataFinalCotacao='%s'&$orderby=%s&$format=%s";
         String dataInicial = FORMATTER.format(LocalDate.now().minusDays(6));
         String dataFinalCotacao = FORMATTER.format(LocalDate.now());
-
         String orderBy = "dataHoraCotacao desc";
         String format = "json";
 

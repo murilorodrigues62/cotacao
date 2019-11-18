@@ -11,7 +11,7 @@ import rodrigues.murilo.cotacao.service.CotacaoService;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/nubank")
+@RequestMapping("/")
 public class DolarNuBankController {
 
     @GetMapping

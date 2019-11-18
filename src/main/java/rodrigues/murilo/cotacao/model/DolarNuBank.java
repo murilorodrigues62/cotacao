@@ -1,31 +1,30 @@
 package rodrigues.murilo.cotacao.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class DolarNuBank {
 
     private final BigDecimal spread = new BigDecimal("0.04");
     private BigDecimal ptax;
-    private LocalDateTime ptaxData;
+    private String ptaxData;
     private BigDecimal valor;
 
-    public DolarNuBank(BigDecimal ptax, LocalDateTime ptaxData) {
+    public DolarNuBank(BigDecimal ptax, String ptaxData) {
         this.ptax = ptax;
         this.ptaxData = ptaxData;
     }
 
     public BigDecimal getSpread() { return spread;    }
     public BigDecimal getPtax() {   return ptax;    }
-    public LocalDateTime getPtaxData() {    return ptaxData;    }
+    public String getPtaxData() {    return ptaxData;    }
     public BigDecimal getValor() {
         // Adicionado % de Spread sobre o dolar PTAX
        return getPtax().multiply(getSpread()).add(getPtax());
     }
 
     public void setPtax(BigDecimal ptax) {     this.ptax = ptax;     }
-    public void setPtaxData(LocalDateTime ptaxData) {   this.ptaxData = ptaxData;    }
+    public void setPtaxData(String ptaxData) {   this.ptaxData = ptaxData;    }
 
     @Override
     public boolean equals(Object o) {
